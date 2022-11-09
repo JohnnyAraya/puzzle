@@ -44,3 +44,15 @@ You will create a blank image by doing the following:
 * Jon/JP/Eli/Leo
 
 Include a document describing your contribution to the project
+
+Contributions:
+
+Johnny:
+
+Naihrobi:
+
+Michael:
+
+Peyton:
+
+
