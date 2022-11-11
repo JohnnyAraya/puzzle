@@ -8,6 +8,25 @@
    <script type="text/javascript" src="puzzle.js" defer></script>
 </head>
 <body>
+<?php
+
+function checkDir($dir){
+  if(!is_dir($dir)||!is_writeable($dir)){
+    return false;
+  }
+  return true;
+}
+
+
+function tooBig($size){
+  global $max;
+
+  if($size>$max){
+    return true;
+  }
+  return false;
+}
+?>
   <div id="allContent">
     <div id="topContainer">
       <header>
@@ -44,6 +63,29 @@
           </tr>
         </table>
       </form>
+      <?php
+      if(!checkDir($dest)){
+            echo '<p>ERROR, cannot write to final destination or it does not exist</p>';
+      }
+      else{
+      if(isset($_POST['upload'])){
+            echo "<pre>";
+            print_r($_FILES);
+            echo "</pre>";
+      }
+      }
+            foreach($_FILES as $file){
+      
+                  if($file['error']){
+                  echo 'Error uploading', $file['name'], '<br>';
+                  }
+                  else if(tooBig($file['size'], $max)){
+                  echo 'Error uploading, file ', $file['name'], ' is too large<br>';
+                  
+                  
+                  }
+            }
+                ?>
     </div>
     <main id="gameboard">
       <!-- nothing here yet. content will be -->
