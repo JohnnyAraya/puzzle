@@ -85,7 +85,8 @@ function tooBig($size){
                   
                   }
             }
-                ?>
+      ?>
+
     </div>
     <main id="gameboard">
       <!-- nothing here yet. content will be -->
